@@ -1,0 +1,54 @@
+<div class="cart-overlay" *ngIf="isOpen" (click)="close()">
+  <div class="cart-panel" (click)="$event.stopPropagation()">
+
+    <div class="cart-header">
+      <h3>Cart summary</h3>
+      <button class="close-btn" (click)="close()">✕</button>
+    </div>
+
+    <div *ngFor="let item of cartItems" class="cart-item">
+
+      <div class="item-top">
+        <div class="item-left">
+          <div class="product-icon">🍨</div>
+          <strong>{{ item.productName }}</strong>
+        </div>
+        <button class="delete-btn">🗑</button>
+      </div>
+
+      <label>Flavor</label>
+      <select disabled>
+        <option>{{ item.flavor }}</option>
+      </select>
+
+      <label>Size</label>
+      <select disabled>
+        <option>{{ item.size }}</option>
+      </select>
+
+      <div class="qty-row">
+        <span>Quantity</span>
+        <div class="qty-control">
+          <button>-</button>
+          <span>{{ item.quantity }}</span>
+          <button>+</button>
+        </div>
+        <span class="price">$ {{ item.price }}</span>
+      </div>
+
+    </div>
+
+    <div class="cart-footer">
+      <p class="note">Shipping and taxes will be calculated at checkout.</p>
+
+      <div class="total-row">
+        <strong>Total</strong>
+        <strong>$ {{ cartItems[0]?.price }}</strong>
+      </div>
+
+      <button class="checkout-btn" (click)="goToCheckout()">Checkout</button>
+      <a class="view-cart">View detailed cart</a>
+    </div>
+
+  </div>
+</div>

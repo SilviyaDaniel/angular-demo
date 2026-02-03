@@ -1,0 +1,60 @@
+<div class="detail-page">
+  <h2>{{ productName | titlecase }}</h2>
+    
+
+  <!-- Product Illustration -->
+  <div class="product-preview">
+    
+    <div
+      *ngIf="productKey === 'ice-cream'"
+      class="ice-cream"
+      [ngClass]="selectedFlavor"
+    >
+      <div class="scoop left"></div>
+      <div class="scoop middle"></div>
+      <div class="scoop right"></div>
+
+      <div class="bowl">
+        <div class="face">
+          <span class="eye"></span>
+          <span class="eye"></span>
+          <div class="mouth"></div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="productKey === 'popsicle'" class="popsicle-wrapper" [ngClass]="selectedFlavor">
+      <div class="popsicle">
+        <div class="face">
+          <span class="eye"></span>
+          <span class="eye"></span>
+          <div class="mouth"></div>
+        </div>
+        
+      </div>
+      <div class="stick"></div>
+    </div>
+  </div>
+  <!-- Size -->
+  <label>Size:</label>
+  <select [(ngModel)]="selectedSize">
+    <option value="" disabled selected>Select size</option>
+    <option *ngFor="let size of sizes">{{ size }}</option>
+  </select>
+
+  <!-- Flavor -->
+  <p>Select your flavor:</p>
+  <div class="flavors">
+    <button
+      *ngFor="let flavor of flavors"
+      [class.active]="selectedFlavor === flavor"
+      (click)="selectFlavor(flavor)">
+      {{ flavor }}
+    </button>
+  </div>
+
+  <!-- Add to Cart -->
+  <button class="add-btn" (click)="addToCart()">
+    Add to cart
+  </button>
+</div>
