@@ -1,20 +1,36 @@
-/* ---------- PAGE ---------- */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3 {
+  margin-top: 0;
+}
+:host {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+
 .page {
   background-color: #faf2e0;
   min-height: 100vh;
+  padding-top: 0;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
 }
 
 /* ---------- TOP BAR ---------- */
 .top-bar {
-    margin-top: -8px;
-    margin-left: -16px;
   height: 40px;
   background: linear-gradient(to right, #222, #444);
   display: flex;
+  margin: 0;
+  justify-content: space-between;
   align-items: center;
-  padding-left: 15px;
 }
 
 .home-icon {
@@ -24,14 +40,14 @@
 
 /* ---------- TITLE ---------- */
 .title {
-  margin-top: 10px;
+  margin: 12px 0 6px;
   font-family: 'Brush Script MT', cursive;
   font-size: 36px;
 }
 
 .subtitle {
   font-size: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 /* ---------- CONTAINER ---------- */
@@ -39,16 +55,16 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-  padding: 20px;
+  margin-top: 10px;
+  padding-top: 0;
+  padding: 0 20px 20px;
 }
 
 /* ---------- CARD ---------- */
 .card {
   width: 260px;
-  height: 300px;
-  padding: 30px 10px;
+  padding: 30px 10px 40px;
   background: #faf2e0;
-  text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   position: relative;
 }
@@ -218,4 +234,6 @@ h3{
   font-family: 'Brush Script MT', cursive;
   font-size: 30px;
   margin-top: -5px;
+  margin-top: 0;
+
 }

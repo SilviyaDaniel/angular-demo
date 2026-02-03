@@ -1,3 +1,12 @@
+.top-bar {
+  height: 40px;
+  background: linear-gradient(to right, #222, #444);
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .detail-page {
   background: #444;
   color: #fff;

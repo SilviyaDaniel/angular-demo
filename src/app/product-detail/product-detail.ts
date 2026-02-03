@@ -39,6 +39,9 @@ export class ProductDetailComponent {
     if (!this.selectedSize && this.sizes.length > 0) {
     this.selectedSize = this.sizes[0];
   }
+  if(!this.selectedFlavor && this.flavors?.length>0) {
+    this.selectedFlavor=this.flavors[0];
+  }
     this.cartService.addToCart({
     productKey: this.productKey,
     productName: this.productName,
